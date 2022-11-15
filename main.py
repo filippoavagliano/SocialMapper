@@ -1,9 +1,11 @@
 import schedule
 import time
+import download
 
 
 def job():
     print("I'm working...")
+    download.download_media('ms.emelia')
 
 
 schedule.every(1).minutes.do(job)
