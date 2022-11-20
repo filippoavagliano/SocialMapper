@@ -1,0 +1,11 @@
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-11-03_12-45-20_UTC_1.jpg
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-11-03_16-09-31_UTC.jpg 865,749,985,807,bally2,0.65,1.000
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-11-06_17-53-39_UTC_1.jpg 362,857,392,908,camaro0,0.24,0.996
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2015-11-19_06-11-13_UTC_profile_pic.jpg 79,101,403,328,dish-network2,0.69,1.000
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-10-25_05-02-48_UTC_1.jpg
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-10-26_16-40-34_UTC_1.jpg 268,975,333,1028,lexus2,0.98,0.993
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-10-28_12-13-54_UTC_1.jpg 158,693,181,739,puma0,0.83,0.996
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-10-29_12-48-56_UTC.jpg
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-11-01_13-15-38_UTC_1.jpg 322,803,410,837,hyundai0,0.97,0.999
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-11-02_15-55-43_UTC.jpg
+/content/drive/MyDrive/SocialMapper/vip/andreagaleazzi/2022-10-24_14-59-05_UTC.jpg 984,693,1046,757,rolls-royce1,0.25,0.995 73,65,405,302,keller-williams2,0.42,0.998 1170,340,1232,420,puma0,0.93,0.994
