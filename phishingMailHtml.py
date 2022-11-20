@@ -2,7 +2,7 @@ from tinyhtml import h, html, frag, raw
   
   
 nameProfile = "Clementino"
-imgLogoPath = "img1.png"
+imgLogoPath = "accenture_4.png"
 
   
 # function to create layout.
@@ -19,7 +19,8 @@ def create_layout(title, body):
   
 # calling function to create layout.
 layout = create_layout("Mail Phishing", frag(
-    h("h3",klass=["center"])("Hi "+nameProfile),
+    h("img",width="70", height="70",src=imgLogoPath),
+    h("h3",klass=["center"])("Hi " + nameProfile),
     h("p")("Here are the details of your payments:"),
     h("table")(
         h("tr")(h("th")("Store"),h("th")("Type"),h("th")("Purchased"),h("th")("Price")),
