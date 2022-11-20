@@ -17,3 +17,7 @@ table {
   tbody > tr:last-child{
     font-weight: bold;
   }
+
+  .center{
+      text-align: center;
+  }
