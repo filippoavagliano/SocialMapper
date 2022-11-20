@@ -5,7 +5,6 @@ cars_test.tgz
 cars_train.tgz
 custom_layers/__pycache__/
 data/
-models/
 logs/
 cars_test/
 cars_train/
