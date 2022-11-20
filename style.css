@@ -1,4 +1,19 @@
-.center{
-    text-align: center;
-    background-color: aquamarine;
-}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:first-child th {
+    background-color: #dddddd;
+  }
+
+  tbody > tr:last-child{
+    font-weight: bold;
+  }
