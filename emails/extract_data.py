@@ -1,8 +1,9 @@
 import os
 import json
-import requests
 import yaml
-
+import requests
+from xml.etree import ElementTree
+import xml.dom.minidom
 
 def get_most_common_logos():
     f = open('result.json')
@@ -37,12 +38,36 @@ def get_ebay_token():
 def get_ebay_info(search_term):
     # https://developer.ebay.com/my/api_test_tool
     token = get_ebay_token()
-    string_search = f'https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search?q={search_term}&limit=15'
-    x = requests.get(string_search,
-                     headers={'Authorization': token})
-    response_data = x.json()
-    for item in response_data['itemSummaries']:
-        print(item)
+    string_search = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords' \
+                    '&SECURITY-APPNAME=GennaroE-SM2023-PRD-9805bf466-0f3650b4' \
+                    f'&keywords={search_term}'
+    response = requests.get(string_search,
+                            headers={'Authorization': token})
+    '''
+    dom = xml.dom.minidom.parseString(response.content)
+    pretty_xml_as_string = dom.toprettyxml()
+    print(pretty_xml_as_string)
+    '''
 
+    element = ElementTree.fromstring(response.content)
+
+    for child in element:
+        print(child)
+
+
+
+    # print(pretty_xml_as_string)
+    # for item in root.findall('./findItemsByKeywordsResponse'):
+        # print(item)
+
+'''
+findItemsByKeywordsResponse
+searchResult
+iterare su item
+    title
+    galleryURL
+    sellingStatus
+        currentPrice
+'''
 
 get_ebay_info('apple')

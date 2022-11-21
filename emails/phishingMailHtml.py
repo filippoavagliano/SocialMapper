@@ -2,9 +2,9 @@ from tinyhtml import h, html, frag
 from extract_data import get_most_common_logos, get_logo_image
 
 
-profileName = "Clementino"
-logoName = get_most_common_logos()[0]
-imgLogoPath = get_logo_image(logoName)
+profile_name = "Clementino"
+logo_name = get_most_common_logos()[0]
+imgLogoPath = get_logo_image(logo_name)
 
 
 # function to create layout.
@@ -25,7 +25,7 @@ def create_body():
         h("div", klass=["center"])(
             h("img", width="250", src=imgLogoPath)
         ),
-        h("h3")("Hi " + profileName),
+        h("h3")("Hi " + profile_name),
         h("p")("Here are the details of your payments:"),
         h("table")(
             h("tr")(h("th")("Store"), h("th")("Type"), h("th")("Purchased"), h("th")("Price")),
@@ -35,7 +35,7 @@ def create_body():
         ),
         h("h4")("Don't recognize this payment?"),
         h("p")("If you did not authorize this payment, please visit ",
-               h("a", href="https://www.google.it/")(logoName + " Payment Cancellation")),
+               h("a", href="https://www.google.it/")(logo_name + " Payment Cancellation")),
 
     ))
     return body
