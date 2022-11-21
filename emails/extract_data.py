@@ -5,6 +5,7 @@ import requests
 from xml.etree import ElementTree
 import xml.dom.minidom
 
+
 def get_most_common_logos():
     f = open('result.json')
     profile = json.load(f)
@@ -49,16 +50,17 @@ def get_ebay_info(search_term):
     print(pretty_xml_as_string)
     '''
 
+    namespace = '{http://www.ebay.com/marketplace/search/v1/services}'
     element = ElementTree.fromstring(response.content)
 
-    for child in element:
-        print(child)
+    search_result = element.find(f'./{namespace}searchResult')
 
+    for item in search_result.findall(f'./{namespace}item'):
+        print(item)
+        title_node = item.find(f'./{namespace}title')
+        title = title_node.text
+        print(title)
 
-
-    # print(pretty_xml_as_string)
-    # for item in root.findall('./findItemsByKeywordsResponse'):
-        # print(item)
 
 '''
 findItemsByKeywordsResponse
