@@ -33,13 +33,13 @@ def create_body():
             h("table")(
                 h("tr")(
                     h("td",Klass="first")(
-                        h("p")("Online", h("span",style="color:orange")("SHOPPING")),
+                        h("p")("ONLINE ", h("span",style="color:orange")("SHOPPING")),
                         h("h2")("Save 40%"),
                         h("p",klass="second")("Everything At One Place"),
                         h("p",klass="third")("Making Lives Effortless")
                         ),
                     h("td")(
-                        h("img", src=img_path[0], style="height=180")
+                        h("img", src='../'+img_path[0], style="height=180")
                     ),
                 ),
             ),
@@ -51,17 +51,20 @@ def create_body():
             h("table")(
                 
                     h("tr")(
-                    h("td")(h("img",src=img_path[0])),
-                    h("td")(h("img",src=img_path[1])),
-                    h("td")(h("img",src=img_path[2])),
+                    h("td")(h("img",src=items[0][idx]["image_url"]))
+                    for idx in range(3)
                     ),
                     
                     h("tr")(
-                    h("td")(h("img",src=img_path[2])),
-                    h("td")(h("img",src=img_path[1])),
-                    h("td")(h("img",src=img_path[0])),
-                    )
-                 
+                    h("td")(h("img",src=items[1][idx]["image_url"]))
+                    for idx in range(3)
+                    ),
+                    
+                    h("tr")(
+                    h("td")(h("img",src=items[2][idx]["image_url"]))
+                    for idx in range(3)
+                    ),
+                    
             ),
         
         h("button", klass="button-style")("Visit Us & Avail Amazing Discount..!!"),
