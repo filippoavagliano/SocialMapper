@@ -4,5 +4,12 @@ logohunter/src/inception_logo_features_200_trunc2.hdf5
 logohunter/src/vgg16_logo_features_128.hdf5
 logohunter/src/keras_yolo3/yolo_weights_logos.h5
 logohunter/data/*
+logohunter/data.zip
+logohunter/src/srcFile.zip
+logohunter/src/keras_yolo3/keras_yolo_file.zip
 
 carrecognition/models/*
+carrecognition/models.zip
+
+
+
