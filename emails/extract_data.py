@@ -56,9 +56,14 @@ def get_ebay_info(search_term):
         image_node = item.find(f'./{namespace}galleryURL')
         item_info['title'] = title_node.text
         item_info['image_url'] = image_node.text
+        category_node = item.find(f'./{namespace}primaryCategory')
+        category_name_node = category_node.find(f'./{namespace}categoryName')
+        item_info['category'] = category_name_node.text
         selling_info_node = item.find(f'./{namespace}sellingStatus')
         price_node = selling_info_node.find(f'./{namespace}currentPrice')
-        item_info['price'] = price_node.text
+        item_info['price'] = float(price_node.text)
         items.append(item_info)
+
+    # print(items)
 
     return items

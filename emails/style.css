@@ -1,23 +1,31 @@
+* {
+    font-family: arial, sans-serif;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  td, th {
+}
+
+td, th {
     border-bottom: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-  }
-  
-  tr:first-child th {
+}
+
+tr:first-child th {
     background-color: #dddddd;
-  }
+}
 
-  tbody > tr:last-child{
+tbody > tr:last-child, tbody > tr > td:last-child {
     font-weight: bold;
-  }
+}
 
-  .center{
-      text-align: center;
-  }
+tbody > tr > th:last-child, tbody > tr > td:last-child {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
