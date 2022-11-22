@@ -9,10 +9,10 @@ reader = easyocr.Reader(['en', 'it'])
 
 
 def ocr_nn(profile):
+    print('Lettura del testo nelle immagini\n')
     input_path = os.path.join(INPUT_FOLDER, profile)
     output_path = os.path.join(OUTPUT_FOLDER, profile, 'ocr')
     if not os.path.exists(output_path):
-        print('hi')
         os.mkdir(output_path)
     for picture in os.scandir(input_path):
         filename, file_extension = os.path.splitext(picture.name)

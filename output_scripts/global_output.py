@@ -30,3 +30,5 @@ def generate_global_output(profile):
 
     with open(json_path, "w") as outfile:
         json.dump(result_dict, outfile, ensure_ascii=False)
+
+    print('Generazione output completata')
