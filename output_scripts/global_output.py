@@ -7,7 +7,7 @@ OUTPUT_FOLDER = "output"
 
 def generate_global_output(profile):
     output_path = os.path.join(OUTPUT_FOLDER, profile)
-    print(f'Genero output per il profilo {profile}')
+    print(f'\nGenero output per il profilo {profile}')
     json_path = os.path.join(output_path, "result.json")
     result_dict = {}
     for res_folder in os.scandir(output_path):
