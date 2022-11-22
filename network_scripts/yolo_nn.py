@@ -25,7 +25,12 @@ def yolo_nn(profile):
     #result = subprocess.run(["python", "detect.py","--save-crop","--save-txt", "--save-conf","--source", inputpath, ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     #print(result.stdout)
     yolo_folder = os.path.join(profile,"yolo")
-    detect.run(save_crop=True, save_txt=True, save_conf=True, source=input_path, project=OUTPUT_FOLDER, name=yolo_folder)
+    detect_path = "yolov5/detect.py"
+    
+    cmd = 'python '+detect_path+' --save-crop --save-txt --save-conf --source '+ input_path +' --project '+OUTPUT_FOLDER+' --name '+yolo_folder
+
+    os.system(cmd)
+    
     
     #yolo.run(save_crop=True, save_txt=True, save_conf=True, source=input_path, project=OUTPUT_FOLDER, name=profile+"yolo")
     print("Object detection completato")
