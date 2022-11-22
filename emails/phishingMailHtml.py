@@ -1,10 +1,11 @@
 from tinyhtml import h, html, frag
-from extract_data import get_most_common_logos, get_logo_image
+from extract_data import get_most_common_logos, get_logo_image, get_ebay_info
 
 
 profile_name = "Clementino"
 logo_name = get_most_common_logos()[0]
 imgLogoPath = get_logo_image(logo_name)
+items = get_ebay_info(logo_name)
 
 
 # function to create layout.

@@ -3,7 +3,6 @@ import json
 import yaml
 import requests
 from xml.etree import ElementTree
-import xml.dom.minidom
 
 
 def get_most_common_logos():
@@ -37,39 +36,29 @@ def get_ebay_token():
 
 
 def get_ebay_info(search_term):
-    # https://developer.ebay.com/my/api_test_tool
     token = get_ebay_token()
     string_search = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords' \
                     '&SECURITY-APPNAME=GennaroE-SM2023-PRD-9805bf466-0f3650b4' \
                     f'&keywords={search_term}'
     response = requests.get(string_search,
                             headers={'Authorization': token})
-    '''
-    dom = xml.dom.minidom.parseString(response.content)
-    pretty_xml_as_string = dom.toprettyxml()
-    print(pretty_xml_as_string)
-    '''
 
     namespace = '{http://www.ebay.com/marketplace/search/v1/services}'
     element = ElementTree.fromstring(response.content)
 
     search_result = element.find(f'./{namespace}searchResult')
 
+    items = []
+
     for item in search_result.findall(f'./{namespace}item'):
-        print(item)
+        item_info = {}
         title_node = item.find(f'./{namespace}title')
-        title = title_node.text
-        print(title)
+        image_node = item.find(f'./{namespace}galleryURL')
+        item_info['title'] = title_node.text
+        item_info['image_url'] = image_node.text
+        selling_info_node = item.find(f'./{namespace}sellingStatus')
+        price_node = selling_info_node.find(f'./{namespace}currentPrice')
+        item_info['price'] = price_node.text
+        items.append(item_info)
 
-
-'''
-findItemsByKeywordsResponse
-searchResult
-iterare su item
-    title
-    galleryURL
-    sellingStatus
-        currentPrice
-'''
-
-get_ebay_info('apple')
+    return items
