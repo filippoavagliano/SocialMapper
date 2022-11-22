@@ -20,7 +20,7 @@ def check_name(logo, image_name):
 
 
 def get_logo_image(image):
-    logo_folder = "../logohunter/data/test/TESTING"
+    logo_folder = "../logohunter/data/test/logos"
     logo_list = os.listdir(logo_folder)
     logo_list = list(filter(lambda x: check_name(image, x), logo_list))
     selected_logo = logo_list[0]
