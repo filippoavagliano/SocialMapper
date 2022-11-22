@@ -1,7 +1,7 @@
 import schedule
 import time
 import download
-from network_scripts import yolo_nn
+from network_scripts import yolo_nn,carrec_nn
 from output_scripts import global_output
 
 
@@ -18,10 +18,11 @@ def start_all():
     '''
     ocr_nn.ocr_nn(username)
     global_output.generate_global_output(username)
-    '''
+    
     
     yolo_nn.yolo_nn(username)
-    
+    '''
+    carrec_nn.carrecognition_nn(username)
     
 
 schedule.every(3).hours.do(start_all)

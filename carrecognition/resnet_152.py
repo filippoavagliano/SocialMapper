@@ -5,7 +5,9 @@ from tensorflow.keras.layers import ( BatchNormalization, Input, Dense, Conv2D, 
 from keras.models import Model
 from keras import backend as K
 
+
 from sklearn.metrics import log_loss
+#from sklearn.metrics import log_loss
 
 from custom_layers.scale_layer import Scale
 
@@ -148,10 +150,10 @@ def resnet152_model(img_rows, img_cols, color_type=1, num_classes=None):
 
     if K.image_data_format() == 'channels_first':
       # Use pre-trained weights for Theano backend
-      weights_path = 'models/resnet152_weights_th.h5'
+      weights_path = '/Users/filippo/Documents/GitHub/SocialMapper/carrecognition/resnet_152.py'
     else:
       # Use pre-trained weights for Tensorflow backend
-      weights_path = 'models/resnet152_weights_tf.h5'
+      weights_path = '/Users/filippo/Documents/GitHub/SocialMapper/carrecognition/resnet_152.py'
 
     model.load_weights(weights_path, by_name=True)
 
