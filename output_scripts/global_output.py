@@ -26,7 +26,7 @@ def generate_global_output(profile):
         elif res_folder.name == "ocr":
             ocr_dict = ocr_user_output(res_folder.path)
             result_dict['ocr'] = ocr_dict
-        print(result_dict)
+    print(result_dict)
 
     with open(json_path, "w") as outfile:
         json.dump(result_dict, outfile, ensure_ascii=False)

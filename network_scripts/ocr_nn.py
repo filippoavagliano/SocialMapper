@@ -9,7 +9,7 @@ reader = easyocr.Reader(['en', 'it'])
 
 
 def ocr_nn(profile):
-    print('Lettura del testo nelle immagini\n')
+    print('\nLettura del testo nelle immagini')
     input_path = os.path.join(INPUT_FOLDER, profile)
     output_path = os.path.join(OUTPUT_FOLDER, profile, 'ocr')
     if not os.path.exists(output_path):

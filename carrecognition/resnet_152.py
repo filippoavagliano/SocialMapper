@@ -150,10 +150,10 @@ def resnet152_model(img_rows, img_cols, color_type=1, num_classes=None):
 
     if K.image_data_format() == 'channels_first':
       # Use pre-trained weights for Theano backend
-      weights_path = '/Users/filippo/Documents/GitHub/SocialMapper/carrecognition/resnet_152.py'
+      weights_path = 'carrecognition/models/resnet152_weights_th.h5'
     else:
       # Use pre-trained weights for Tensorflow backend
-      weights_path = '/Users/filippo/Documents/GitHub/SocialMapper/carrecognition/resnet_152.py'
+      weights_path = 'carrecognition/models/resnet152_weights_tf.h5'
 
     model.load_weights(weights_path, by_name=True)
 

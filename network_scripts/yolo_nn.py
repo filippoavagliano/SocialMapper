@@ -10,7 +10,7 @@ OUTPUT_FOLDER = "output"
 
 def yolo_nn(profile):
     
-    print('Lettura del testo nelle immagini\n')
+    print('\nRiconoscimento degli oggetti in corso\n')
     input_path = os.path.join(INPUT_FOLDER, profile)
     output_path = os.path.join(OUTPUT_FOLDER, profile, 'yolo')
     
