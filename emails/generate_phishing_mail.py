@@ -26,7 +26,7 @@ def create_body():
     # calling function to create layout.
     body = create_layout("Receipt", frag(
         h("div", klass=["center"])(
-            h("img", width="250", src=img_path)
+            h("img", width="250", src='../' + img_path)
         ),
         h("h3")("Hi " + profile_name),
         h("p")("Here are the details of your payments:"),
@@ -34,11 +34,11 @@ def create_body():
             h("tr")(h("th")("Product"), h("th")("Category"), h("th")("Price")),
             (
                 h("tr")(
-                    h("td")(items[idx]['title']), 
-                    h("td")(items[idx]['category']), 
+                    h("td")(items[idx]['title']),
+                    h("td")(items[idx]['category']),
                     h("td")("{:.2f}".format(items[idx]['price']) + '€')
-                    )
-                    for idx in range(3)),
+                )
+                for idx in range(3)),
             h("tr")(h("td")(), h("td")(), h("td")("{:.2f}".format(total) + '€'))
         ),
         h("h4")("Don't recognize this payment?"),
