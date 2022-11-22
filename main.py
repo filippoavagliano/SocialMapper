@@ -20,7 +20,7 @@ def start_all():
     global_output.generate_global_output(username)
     '''
     
-    yolo_nn(username)
+    yolo_nn.yolo_nn(username)
     
     
 
