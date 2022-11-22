@@ -16,6 +16,6 @@ output/*
 !/pictures/user_test/
 !/output/user_test/
 
-__pycache__/
-emails/__pycache__/
+__pycache__/*
+emails/__pycache__/*
 
