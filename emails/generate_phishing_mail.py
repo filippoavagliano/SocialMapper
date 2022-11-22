@@ -32,8 +32,13 @@ def create_body():
         h("p")("Here are the details of your payments:"),
         h("table")(
             h("tr")(h("th")("Product"), h("th")("Category"), h("th")("Price")),
-            (h("tr")(h("td")(items[idx]['title']), h("td")(items[idx]['category']), h("td")("{:.2f}".format(items[idx]['price']) + '€'))
-             for idx in range(3)),
+            (
+                h("tr")(
+                    h("td")(items[idx]['title']), 
+                    h("td")(items[idx]['category']), 
+                    h("td")("{:.2f}".format(items[idx]['price']) + '€')
+                    )
+                    for idx in range(3)),
             h("tr")(h("td")(), h("td")(), h("td")("{:.2f}".format(total) + '€'))
         ),
         h("h4")("Don't recognize this payment?"),
@@ -46,6 +51,6 @@ def create_body():
 
 layout = create_body()
 
-f = open("phishing_mail.html", "w")
+f = open("emails/phishing_mail.html", "w")
 f.write(layout.render())
 f.close()

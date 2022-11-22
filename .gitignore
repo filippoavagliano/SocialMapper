@@ -15,3 +15,5 @@ pictures/*
 output/*
 !/pictures/user_test/
 !/output/user_test/
+emails/__pycache__/extract_data.cpython-310.pyc
+emails/__pycache__/extract_data.cpython-310.pyc

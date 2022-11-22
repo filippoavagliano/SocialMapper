@@ -1,0 +1,45 @@
+.first{
+    background-color:black;
+    color:white;
+  }
+  
+  .second{
+    background-color:grey;
+  }
+  
+  .third{
+      background-color:green;
+  }
+  
+  .body-One{
+    text-align:center;
+    color:red;
+  }
+  
+  .body-Two{
+    text-align:center;
+    color:grey;
+  }
+  
+  .image-size{
+    height:96px;
+  }
+  
+  .button-style{
+    
+    background-color: red;
+    color:white;
+    font-weight:bold;
+    
+    
+    position: relative;
+    left:30%;
+  }
+  
+  .footer{
+    text-align:center;
+  }
+  
+  table{
+    margin: 0px auto;
+  }
