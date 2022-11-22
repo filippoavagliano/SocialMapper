@@ -2,10 +2,15 @@ import schedule
 import time
 import download
 
+'''
+
+
+
 
 def job():
     print("I'm working...")
     download.download_media('ms.emelia')
+
 
 
 schedule.every(1).minutes.do(job)
@@ -18,3 +23,8 @@ schedule.every().minute.at(":17").do(job)
 while True:
     schedule.run_pending()
     time.sleep(1)
+'''
+
+from output_scripts import global_output
+
+global_output.generate_global_output('user_test')
