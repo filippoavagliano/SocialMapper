@@ -6,6 +6,7 @@ profile_name = "Clementino"
 logo_name = get_most_common_logos()[0]
 imgLogoPath = get_logo_image(logo_name)
 items = get_ebay_info(logo_name)
+total = sum(float(d['price']) for d in items[0:3])
 
 
 # function to create layout.
@@ -13,6 +14,7 @@ items = get_ebay_info(logo_name)
 def create_layout(title, body):
     return html(lang="en")(
         h("head")(
+            h("meta", charset="utf-8"),
             h("title")(title),
             h("link", rel="stylesheet", href="style.css")
         ),
@@ -29,10 +31,10 @@ def create_body():
         h("h3")("Hi " + profile_name),
         h("p")("Here are the details of your payments:"),
         h("table")(
-            h("tr")(h("th")("Store"), h("th")("Type"), h("th")("Purchased"), h("th")("Price")),
-            h("tr")(h("td")("Slower shutter"), h("th")("Os"), h("th")("Iphone"), h("th")("3,79$")),
-            h("tr")(h("td")("Pro HDR"), h("th")("Os app"), h("th")("Iphone"), h("th")("1,49$")),
-            h("tr")(h("td")("Total"), h("th")(""), h("th")(""), h("th")("5,28$")),
+            h("tr")(h("th")("Product"), h("th")("Type"),  h("th")("Price")),
+            (h("tr")(h("td")(items[idx]['title']), h("td")("Os"), h("td")(items[idx]['price'] + '€'))
+             for idx in range(3)),
+            h("tr")(h("td")(), h("td")(), h("td")("{:.2f}".format(total) + '€'))
         ),
         h("h4")("Don't recognize this payment?"),
         h("p")("If you did not authorize this payment, please visit ",
