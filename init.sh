@@ -9,7 +9,7 @@ cd data
 wget "https://drive.google.com/uc?id=1TL-_zg81Ik3pqvM237wwYPEM1GjhjLL7&export=download&confirm=t" -O "data.zip"
 unzip data.zip -d test
 
-cd src
+cd ../src
 wget "https://drive.google.com/uc?id=13XjHDEIc3tYR9CenDUAbvZfKxovEy_58&export=download&confirm=t" -O "srcFile.zip"
 unzip srcFile.zip
 
