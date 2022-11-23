@@ -89,6 +89,7 @@ termcolor==2.1.1
 thop==0.1.1.post2209072238
 threadpoolctl==3.1.0
 tifffile==2022.10.10
+tinyhtml==1.2.0
 torch==1.13.0
 torchvision==0.14.0
 tqdm==4.64.1

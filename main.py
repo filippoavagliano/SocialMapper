@@ -22,7 +22,7 @@ def start_all():
     '''
     yolo_nn.yolo_nn(username)
     ocr_nn.ocr_nn(username)
-    carrec_nn.carrecognition_nn(username)
+    carrec_nn.car_recognition_nn(username)
     global_output.generate_global_output(username)
     
 

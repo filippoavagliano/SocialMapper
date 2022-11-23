@@ -4,7 +4,7 @@ INPUT_FOLDER = "pictures"
 OUTPUT_FOLDER = "output"
 
 
-def carrecognition_nn(profile):
+def car_recognition_nn(profile):
     print('\nRiconoscimento di automobili in corso\n')
     input_path = os.path.join(OUTPUT_FOLDER, profile, 'yolo', 'crops', 'car')
     output_path = os.path.join(OUTPUT_FOLDER, profile, 'car_rec')
