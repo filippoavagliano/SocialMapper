@@ -1,14 +1,12 @@
+import os
+import shutil
+import webbrowser
 from tinyhtml import h, html, frag
 from emails_generation import extract_data
 
-profile_name = "Clementino"
-logo_list = get_most_common_logos()
-
-img_path = []
-items = []
-for element in logo_list:
-    img_path.append(get_logo_image(element))
-    items.append(get_ebay_info(element)[0:3])
+OUTPUT_FOLDER = "output"
+CSS_PATH = "emails_generation/advertising.css"
+HEADER_PATH = "emails_generation/header.png"
 
 
 # function to create layout.
@@ -18,13 +16,13 @@ def create_layout(title, body):
         h("head")(
             h("meta", charset="utf-8"),
             h("title")(title),
-            h("link", rel="stylesheet", href="style2.css")
+            h("link", rel="stylesheet", href="advertising.css")
         ),
         h("body", style="background-color:grey")(body)
     )
 
 
-def create_body():
+def create_body(logo_list, items):
     # calling function to create layout.
     body = create_layout("Receipt", frag(
         h("div", klass="container")(
@@ -38,32 +36,18 @@ def create_body():
 
             h("table")(
 
-                h("tr")(
-                    h("td", colspan="3", klass="logo")(logo_list[0])
-                ),
+                h("span")(
 
-                h("tr")(
-                    h("td")(h("img", klass="product", src=items[0][idx]["image_url"]))
-                    for idx in range(3)
-                ),
+                    h("tr")(
+                        h("td", colspan="3", klass="logo")(logo_list[logo_count])
+                    ),
 
-                h("tr")(
-                    h("td", colspan="3", klass="logo")(logo_list[1])
-                ),
+                    h("tr")(
+                        h("td")(h("img", klass="product", src=items[logo_count][idx]["image_url"]))
+                        for idx in range(3)
+                    )
 
-                h("tr")(
-                    h("td")(h("img", klass="product", src=items[1][idx]["image_url"]))
-                    for idx in range(3)
-                ),
-
-                h("tr")(
-                    h("td", colspan="3", klass="logo")(logo_list[2])
-                ),
-
-                h("tr")(
-                    h("td")(h("img", klass="product", src=items[2][idx]["image_url"]))
-                    for idx in range(3)
-                ),
+                ) for logo_count, logo in enumerate(logo_list)
 
             ),
 
@@ -80,8 +64,22 @@ def create_body():
     return body
 
 
-layout = create_body()
-
-f = open("emails/advertising_mail.html", "w")
-f.write(layout.render())
-f.close()
+def generate(profile):
+    print(f'\nGenerazione email di pubblicità mirata per il profilo {profile}')
+    email_folder = os.path.join(OUTPUT_FOLDER, profile, 'emails', 'advertising_mail')
+    logo_list = extract_data.get_most_common_logos(profile)
+    items = []
+    if not os.path.exists(email_folder):
+        os.mkdir(email_folder)
+    shutil.copy(HEADER_PATH, email_folder)
+    shutil.copy(CSS_PATH, email_folder)
+    print('Invocazione API ebay')
+    for element in logo_list:
+        items.append(extract_data.get_ebay_info(element)[0:3])
+    layout = create_body(logo_list, items)
+    page_path = os.path.join(email_folder, "advertising_mail.html")
+    f = open(page_path, "w")
+    f.write(layout.render())
+    f.close()
+    print('Email di pubblicità mirata completata')
+    webbrowser.open(page_path)

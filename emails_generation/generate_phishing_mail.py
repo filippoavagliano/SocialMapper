@@ -49,7 +49,7 @@ def create_body(img_path, profile_name, items, total, website, logo_name):
 
 
 def generate(profile):
-    print(f'\nGenerazione email per il profilo {profile}')
+    print(f'\nGenerazione email di phishing per il profilo {profile}')
     email_folder = os.path.join(OUTPUT_FOLDER, profile, 'emails', 'phishing_mail')
     logo_name = extract_data.get_most_common_logos(profile)[0]
     img_path = extract_data.get_logo_image(logo_name)
