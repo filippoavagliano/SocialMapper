@@ -29,3 +29,7 @@ tbody > tr > th:last-child, tbody > tr > td:last-child {
 .center {
     text-align: center;
 }
+
+.capitalize {
+    text-transform: capitalize;
+}

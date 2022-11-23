@@ -1,7 +1,5 @@
 import os
 import shutil
-from yolov5 import detect
-import subprocess
 
 INPUT_FOLDER = "pictures"
 OUTPUT_FOLDER = "output"

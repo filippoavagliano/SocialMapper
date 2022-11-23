@@ -1,0 +1,12 @@
+certifi==2022.9.24
+charset-normalizer==2.1.1
+idna==3.4
+instagrapi==1.16.30
+pycryptodomex==3.15.0
+pydantic==1.10.2
+PySocks==1.7.1
+requests==2.28.1
+schedule==1.1.0
+tinyhtml==1.2.0
+typing_extensions==4.4.0
+urllib3==1.26.12

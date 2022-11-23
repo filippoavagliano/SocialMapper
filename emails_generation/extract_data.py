@@ -4,9 +4,12 @@ import yaml
 import requests
 from xml.etree import ElementTree
 
+OUTPUT_FOLDER = "output"
 
-def get_most_common_logos():
-    f = open('emails/result.json')
+
+def get_most_common_logos(profile):
+    json_path = os.path.join(OUTPUT_FOLDER, profile, 'result.json')
+    f = open(json_path)
     profile = json.load(f)
     total_logos = profile['logohunter']
     logos_sorted = sorted(total_logos.items(), key=lambda x: x[1], reverse=True)
@@ -29,7 +32,7 @@ def get_logo_image(image):
 
 
 def get_ebay_token():
-    token_file = open('emails/token.yaml')
+    token_file = open('emails_generation/token.yaml')
     data = yaml.load(token_file, Loader=yaml.SafeLoader)
     token_file.close()
     return data['ebay_token']

@@ -1,0 +1,35 @@
+* {
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:first-child th {
+    background-color: #dddddd;
+}
+
+tbody > tr:last-child, tbody > tr > td:last-child {
+    font-weight: bold;
+}
+
+tbody > tr > th:last-child, tbody > tr > td:last-child {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}

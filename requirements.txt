@@ -5,7 +5,6 @@ backcall==0.2.0
 cachetools==5.2.0
 certifi==2022.9.24
 charset-normalizer==2.1.1
-console-progressbar==1.1.2
 contourpy==1.0.6
 cycler==0.11.0
 decorator==5.1.1
@@ -26,6 +25,8 @@ ipython==8.6.0
 jedi==0.18.2
 joblib==1.2.0
 keras==2.11.0
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.2
 kiwisolver==1.4.4
 libclang==14.0.6
 Markdown==3.4.1
@@ -44,7 +45,7 @@ opencv-python==4.6.0.66
 opencv-python-headless==4.5.4.60
 opt-einsum==3.3.0
 packaging==21.3
-pandas==1.5.1
+pandas==1.5.2
 parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
@@ -77,7 +78,6 @@ scipy==1.9.3
 seaborn==0.12.1
 Shapely==1.8.5.post1
 six==1.16.0
-sklearn==0.0.post1
 stack-data==0.6.1
 tensorboard==2.11.0
 tensorboard-data-server==0.6.1

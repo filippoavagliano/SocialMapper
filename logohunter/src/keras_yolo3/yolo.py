@@ -16,7 +16,7 @@ from PIL import Image, ImageFont, ImageDraw
 from .yolo3.model import yolo_eval, yolo_body, tiny_yolo_body
 from .yolo3.utils import letterbox_image
 import os
-from keras.utils import multi_gpu_model
+# from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {
@@ -46,6 +46,7 @@ class YOLO(object):
 
     def _get_class(self):
         classes_path = os.path.expanduser(self.classes_path)
+        classes_path = os.path.join('logohunter/src', classes_path)
         with open(classes_path) as f:
             class_names = f.readlines()
         class_names = [c.strip() for c in class_names]
@@ -53,6 +54,7 @@ class YOLO(object):
 
     def _get_anchors(self):
         anchors_path = os.path.expanduser(self.anchors_path)
+        anchors_path = os.path.join('logohunter/src', anchors_path)
         with open(anchors_path) as f:
             anchors = f.readline()
         anchors = [float(x) for x in anchors.split(',')]
@@ -72,7 +74,8 @@ class YOLO(object):
         except:
             self.yolo_model = tiny_yolo_body(Input(shape=(None,None,3)), num_anchors//2, num_classes) \
                 if is_tiny_version else yolo_body(Input(shape=(None,None,3)), num_anchors//3, num_classes)
-            self.yolo_model.load_weights(self.model_path) # make sure model, anchors and classes match
+
+            self.yolo_model.load_weights(os.path.join('logohunter/src', self.model_path))# make sure model, anchors and classes match
         else:
             assert self.yolo_model.layers[-1].output_shape[-1] == \
                 num_anchors/len(self.yolo_model.output) * (num_classes + 5), \
@@ -97,8 +100,8 @@ class YOLO(object):
 
         # Generate output tensor targets for filtered bounding boxes.
         self.input_image_shape = K.placeholder(shape=(2, ))
-        if self.gpu_num>=2:
-            self.yolo_model = multi_gpu_model(self.yolo_model, gpus=self.gpu_num)
+        # if self.gpu_num>=2:
+            # self.yolo_model = multi_gpu_model(self.yolo_model, gpus=self.gpu_num)
         boxes, scores, classes = yolo_eval(self.yolo_model.output, self.anchors,
                 len(self.class_names), self.input_image_shape,
                 score_threshold=self.score, iou_threshold=self.iou)

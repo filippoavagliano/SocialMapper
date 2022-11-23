@@ -1,5 +1,5 @@
 from tinyhtml import h, html, frag
-from extract_data import get_most_common_logos, get_logo_image, get_ebay_info
+from emails_generation import extract_data
 
 profile_name = "Clementino"
 logo_list = get_most_common_logos()

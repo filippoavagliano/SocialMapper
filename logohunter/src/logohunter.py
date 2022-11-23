@@ -89,7 +89,7 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(# good default choices: inception_logo_features_200_trunc2, vgg16_logo_features_128
-        '--features', type=str, dest='features', default = 'inception_logo_features_200_trunc2.hdf5',
+        '--features', type=str, dest='features', default = 'logohunter/src/inception_logo_features_200_trunc2.hdf5',
         help='path to LogosInTheWild logos features extracted by InceptionV3/VGG16'
     )
 
