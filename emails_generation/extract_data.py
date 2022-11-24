@@ -11,11 +11,14 @@ def get_most_common_logos(profile):
     json_path = os.path.join(OUTPUT_FOLDER, profile, 'result.json')
     f = open(json_path)
     profile = json.load(f)
-    total_logos = profile['logohunter']
-    logos_sorted = sorted(total_logos.items(), key=lambda x: x[1], reverse=True)
-    f.close()
-    logos = list(zip(*logos_sorted))[0][0:3]
-    return logos
+    if "logohunter" in profile:
+        total_logos = profile['logohunter']
+        logos_sorted = sorted(total_logos.items(), key=lambda x: x[1], reverse=True)
+        f.close()
+        logos = list(zip(*logos_sorted))[0][0:3]
+        return logos
+    else:
+        return []
 
 
 def check_name(logo, image_name):
