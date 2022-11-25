@@ -1,7 +1,12 @@
 [
     {
-        "picture": "output/user_test/yolo/crops/car/lede-2020-chevrolet-corvette-c8-102-1571146873.jpg",
-        "label": "Ford GT Coupe 2006",
-        "prob": "0.9539"
+        "picture": "output/user_test/yolo/crops/car/2.jpg",
+        "label": "FIAT 500 Convertible 2012",
+        "prob": "0.8426"
+    },
+    {
+        "picture": "output/user_test/yolo/crops/car/4.jpg",
+        "label": "Ferrari California Convertible 2012",
+        "prob": "0.9575"
     }
 ]

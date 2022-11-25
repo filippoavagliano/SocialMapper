@@ -51,21 +51,25 @@ def create_body(img_path, profile_name, items, total, website, logo_name):
 def generate(profile):
     print(f'\nGenerazione email di phishing per il profilo {profile}')
     email_folder = os.path.join(OUTPUT_FOLDER, profile, 'emails', 'phishing_mail')
-    logo_name = extract_data.get_most_common_logos(profile)[0]
-    img_path = extract_data.get_logo_image(logo_name)
-    if not os.path.exists(email_folder):
-        os.mkdir(email_folder)
-    shutil.copy(CSS_PATH, email_folder)
-    shutil.copy(img_path, email_folder)
-    print('Invocazione API ebay')
-    items = extract_data.get_ebay_info(logo_name)
-    total = sum(d['price'] for d in items[0:3])
-    website = 'https://' + logo_name + '.com'
-    img_path = os.path.basename(img_path)
-    layout = create_body(img_path, profile, items, total, website, logo_name)
-    page_path = os.path.join(email_folder, "phishing_mail.html")
-    f = open(page_path, "w")
-    f.write(layout.render())
-    f.close()
-    print('Email di phishing completata')
-    webbrowser.open(page_path)
+    logos = extract_data.get_most_common_logos(profile)
+    if logos:
+        logo_name = logos[0]
+        img_path = extract_data.get_logo_image(logo_name)
+        if not os.path.exists(email_folder):
+            os.mkdir(email_folder)
+        shutil.copy(CSS_PATH, email_folder)
+        shutil.copy(img_path, email_folder)
+        print('Invocazione API ebay')
+        items = extract_data.get_ebay_info(logo_name)
+        total = sum(d['price'] for d in items[0:3])
+        website = 'https://' + logo_name + '.com'
+        img_path = os.path.basename(img_path)
+        layout = create_body(img_path, profile, items, total, website, logo_name)
+        page_path = os.path.join(email_folder, "phishing_mail.html")
+        f = open(page_path, "w")
+        f.write(layout.render())
+        f.close()
+        print('Email di phishing completata')
+        webbrowser.open(page_path)
+    else:
+        print('Nessuna informazione ricavabile dai loghi')

@@ -1,3 +1,1 @@
-/home/chiara/Progetti/FDSML/SocialMapper/pictures/user_test/lede-2020-chevrolet-corvette-c8-102-1571146873.jpg
-/home/chiara/Progetti/FDSML/SocialMapper/pictures/user_test/List-of-Popular-Nike-Advertising-Commercials-their-Years-768x432.jpg 258,347,497,405,deloitte_2,0.61,0.997
-/home/chiara/Progetti/FDSML/SocialMapper/pictures/user_test/Growth-of-Nike-Advertising.jpg 395,30,551,124,nike_1,0.77,1.000
+/home/chiara/Progetti/FDSML/SocialMapper/pictures/user_test/4.png 2189,921,2250,1006,polo_2,0.71,1.000

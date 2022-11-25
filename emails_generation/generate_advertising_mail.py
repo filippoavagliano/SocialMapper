@@ -24,7 +24,7 @@ def create_layout(title, body):
 
 def create_body(logo_list, items):
     # calling function to create layout.
-    body = create_layout("Receipt", frag(
+    body = create_layout("Advertising", frag(
         h("div", klass="container")(
             h("div", klass="header")(
                 h("img", src='header.png')
@@ -35,22 +35,17 @@ def create_body(logo_list, items):
             h("p", klass="body-Two")("Season's Must-Haves"),
 
             h("table")(
-
                 h("span")(
 
                     h("tr")(
                         h("td", colspan="3", klass="logo")(logo_list[logo_count])
                     ),
-
                     h("tr")(
                         h("td")(h("img", klass="product", src=items[logo_count][idx]["image_url"]))
                         for idx in range(3)
                     )
-
                 ) for logo_count, logo in enumerate(logo_list)
-
             ),
-
             h("button", klass="button-style")("Visit Us & Avail Amazing Discount..!!"),
 
         ),
@@ -68,18 +63,21 @@ def generate(profile):
     print(f'\nGenerazione email di pubblicità mirata per il profilo {profile}')
     email_folder = os.path.join(OUTPUT_FOLDER, profile, 'emails', 'advertising_mail')
     logo_list = extract_data.get_most_common_logos(profile)
-    items = []
-    if not os.path.exists(email_folder):
-        os.mkdir(email_folder)
-    shutil.copy(HEADER_PATH, email_folder)
-    shutil.copy(CSS_PATH, email_folder)
-    print('Invocazione API ebay')
-    for element in logo_list:
-        items.append(extract_data.get_ebay_info(element)[0:3])
-    layout = create_body(logo_list, items)
-    page_path = os.path.join(email_folder, "advertising_mail.html")
-    f = open(page_path, "w")
-    f.write(layout.render())
-    f.close()
-    print('Email di pubblicità mirata completata')
-    webbrowser.open(page_path)
+    if logo_list:
+        items = []
+        if not os.path.exists(email_folder):
+            os.mkdir(email_folder)
+        shutil.copy(HEADER_PATH, email_folder)
+        shutil.copy(CSS_PATH, email_folder)
+        print('Invocazione API ebay')
+        for element in logo_list:
+            items.append(extract_data.get_ebay_info(element)[0:3])
+        layout = create_body(logo_list, items)
+        page_path = os.path.join(email_folder, "advertising_mail.html")
+        f = open(page_path, "w")
+        f.write(layout.render())
+        f.close()
+        print('Email di pubblicità mirata completata')
+        webbrowser.open(page_path)
+    else:
+        print('Nessuna informazione ricavabile dai loghi')
