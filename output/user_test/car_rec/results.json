@@ -1,12 +1,12 @@
 [
     {
-        "picture": "output/user_test/yolo/crops/car/2.jpg",
-        "label": "FIAT 500 Convertible 2012",
-        "prob": "0.8426"
-    },
-    {
         "picture": "output/user_test/yolo/crops/car/4.jpg",
         "label": "Ferrari California Convertible 2012",
         "prob": "0.9575"
+    },
+    {
+        "picture": "output/user_test/yolo/crops/car/2.jpg",
+        "label": "FIAT 500 Convertible 2012",
+        "prob": "0.8426"
     }
 ]

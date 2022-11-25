@@ -15,6 +15,7 @@ def get_credentials():
 
 def init_client():
     account_username, account_password = get_credentials()
+    print(f'Login con account {account_username}')
     cl.login(account_username, account_password)
 
 

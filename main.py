@@ -22,13 +22,20 @@ def start_all():
     if not os.path.exists(output_folder):
         os.mkdir(output_folder)
 
-    mode = input('Scaricamento da Instagram? y/n:\n')
+    has_pictures = False
 
-    if mode and mode.strip() == 'y':
-        download.init_client()
-        has_pictures = download.download_media(username)
-    else:
-        has_pictures = len(os.listdir(folder)) > 0
+    while True:
+        mode = input('Scaricamento da Instagram? y/n:\n')
+        if mode.strip() == 'y':
+            download.init_client()
+            has_pictures = download.download_media(username)
+            break
+        elif mode.strip() == 'n':
+            has_pictures = len(os.listdir(folder)) > 0
+            break
+        else:
+            print('Inserire un valore valido\n')
+            continue
 
     if has_pictures:
         yolo_nn.yolo_nn(username)

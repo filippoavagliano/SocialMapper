@@ -1,4 +1,6 @@
 venv/
+.idea
+.DS_Store
 
 logohunter/src/inception_logo_features_200_trunc2.hdf5
 logohunter/src/vgg16_logo_features_128.hdf5
@@ -20,6 +22,3 @@ __pycache__/
 __pycache__/*
 emails/__pycache__/*
 ocr/__pycache__/*
-
-./.idea
-.DS_Store
