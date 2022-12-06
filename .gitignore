@@ -18,7 +18,5 @@ output/*
 !/pictures/user_test/
 !/output/user_test/
 
-__pycache__/
-__pycache__/*
-emails/__pycache__/*
-ocr/__pycache__/*
+*.pyc
+*.pyo

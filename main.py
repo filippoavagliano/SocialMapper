@@ -11,7 +11,7 @@ OUTPUT_FOLDER = "output"
 
 
 def start_all():
-    username = input('Inserire username:\n')
+    username = input('\nInserire username:\n')
     folder = os.path.join('pictures', username)
     pictures_folder = os.path.join(INPUT_FOLDER, username)
     output_folder = os.path.join(OUTPUT_FOLDER, username)
