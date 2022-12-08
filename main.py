@@ -6,23 +6,22 @@ from network_scripts import logohunter_nn, yolo_nn, carrec_nn, ocr_nn
 from output_scripts import global_output
 from emails_generation import generate_phishing_mail, generate_advertising_mail
 
-INPUT_FOLDER = "pictures"
+INPUT_FOLDER = "profiles"
 OUTPUT_FOLDER = "output"
 
 
 def start_all():
     username = input('\nInserire username:\n')
-    folder = os.path.join('pictures', username)
+    folder = os.path.join(INPUT_FOLDER, username)
     pictures_folder = os.path.join(INPUT_FOLDER, username)
     output_folder = os.path.join(OUTPUT_FOLDER, username)
+    has_pictures = False
 
     if not os.path.exists(pictures_folder):
         os.mkdir(pictures_folder)
 
     if not os.path.exists(output_folder):
         os.mkdir(output_folder)
-
-    has_pictures = False
 
     while True:
         mode = input('Scaricamento da Instagram? y/n:\n')
@@ -48,6 +47,8 @@ def start_all():
             os.mkdir(emails_folder)
         generate_phishing_mail.generate(username)
         generate_advertising_mail.generate(username)
+    else:
+        print('Nessuna immagine per questo utente')
 
 
 schedule.every(3).hours.do(start_all)

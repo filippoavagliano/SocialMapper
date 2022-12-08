@@ -1,6 +1,6 @@
 import os
 
-INPUT_FOLDER = "pictures"
+INPUT_FOLDER = "profiles"
 OUTPUT_FOLDER = "output"
 
 

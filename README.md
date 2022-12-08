@@ -3,7 +3,10 @@
 
 La versione di Python utilizzata è: **3.10.6**.
 
-Scaricare i pesi delle reti neurali mediante lo script `init.sh` (Linux) o `init.bat` (Windows)
+Scaricare i pesi delle reti neurali mediante lo script `init.sh` (Linux) o `init.bat` (Windows). 
+Lo script contiene anche le immagini di input e gli output dei casi di studio. Per la rete **Logohunter** sono presenti i 
+risultati sia con due varianti dello stesso logo (nella cartella *logohunter_2*), sia con sette; quest'ultimi sono utilizzati 
+per l'output finale. È preferibile fare uso della variante a due loghi se non si dispone di almeno 16GB di RAM.
 
 ```sh
 ./init.sh

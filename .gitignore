@@ -13,10 +13,10 @@ logohunter/src/keras_yolo3/keras_yolo_file.zip
 carrecognition/models/*
 carrecognition/models.zip
 
-pictures/*
+profiles/*
 output/*
-!/pictures/user_test/
-!/output/user_test/
+
+profiles.zip
 
 *.pyc
 *.pyo

@@ -1,4 +1,7 @@
 #!/bin/bash
+wget "https://drive.google.com/uc?id=1GSWFdeKqJS_Ic9vIiHcwLUxl4KigrnW_&export=download&confirm=t" -O "profiles.zip"
+unzip profiles.zip
+
 cd carrecognition
 wget "https://drive.google.com/uc?id=1X51eVZPldjiLZDHxx2Zm6aY-kgQUmo4c&export=download&confirm=t" -O "models.zip"
 unzip models.zip -d models
@@ -16,7 +19,6 @@ unzip srcFile.zip
 cd keras_yolo3
 wget "https://drive.google.com/uc?id=13aahSd1Qxp69VDbUCWzge1hf7GwMUvXF&export=download&confirm=t" -O "keras_yolo_file.zip"
 unzip keras_yolo_file.zip
-
 
 
 

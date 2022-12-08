@@ -2,7 +2,7 @@ import os
 import json
 import easyocr
 
-INPUT_FOLDER = "pictures"
+INPUT_FOLDER = "profiles"
 OUTPUT_FOLDER = "output"
 
 reader = easyocr.Reader(['en', 'it'])

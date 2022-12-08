@@ -1,3 +1,6 @@
+wget "https://drive.google.com/uc?id=1GSWFdeKqJS_Ic9vIiHcwLUxl4KigrnW_&export=download&confirm=t" -O "profiles.zip"
+tar -xf profiles.zip
+
 mkdir carrecognition\models
 wget "https://drive.google.com/uc?id=1X51eVZPldjiLZDHxx2Zm6aY-kgQUmo4c&export=download&confirm=t"  -O "carrecognition/models.zip"
 tar -xf carrecognition\models.zip -C carrecognition\models
