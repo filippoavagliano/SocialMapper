@@ -1,6 +1,10 @@
 #!/bin/bash
+
 wget "https://drive.google.com/uc?id=1GSWFdeKqJS_Ic9vIiHcwLUxl4KigrnW_&export=download&confirm=t" -O "profiles.zip"
 unzip profiles.zip
+
+wget "https://drive.google.com/uc?id=1waqf1jVw6YCijKvbC7F2nK5u766zgXSe&export=download&confirm=t" -O "output.zip"
+unzip output.zip
 
 cd carrecognition
 wget "https://drive.google.com/uc?id=1X51eVZPldjiLZDHxx2Zm6aY-kgQUmo4c&export=download&confirm=t" -O "models.zip"

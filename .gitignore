@@ -17,6 +17,7 @@ profiles/*
 output/*
 
 profiles.zip
+output.zip
 
 *.pyc
 *.pyo
