@@ -37,11 +37,11 @@ def start_all():
             continue
 
     if has_pictures:
-        yolo_nn.yolo_nn(username)
-        carrec_nn.car_recognition_nn(username)
-        ocr_nn.ocr_nn(username)
-        logohunter_nn.logohunter_nn(username)
-        global_output.generate_global_output(username)
+        # yolo_nn.yolo_nn(username)
+        # carrec_nn.car_recognition_nn(username)
+        # ocr_nn.ocr_nn(username)
+        # logohunter_nn.logohunter_nn(username)
+        # global_output.generate_global_output(username)
         emails_folder = os.path.join(OUTPUT_FOLDER, username, 'emails')
         if not os.path.exists(emails_folder):
             os.mkdir(emails_folder)

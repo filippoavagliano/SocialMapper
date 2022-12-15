@@ -56,6 +56,12 @@ def get_ebay_info(search_term):
     element = ElementTree.fromstring(response.content)
     search_result = element.find(f'./{namespace}searchResult')
 
+    import xml.dom.minidom
+
+    dom = xml.dom.minidom.parseString(response.content)  # or xml.dom.minidom.parseString(xml_string)
+    pretty_xml_as_string = dom.toprettyxml()
+    print(pretty_xml_as_string)
+
     for item in search_result.findall(f'./{namespace}item'):
         item_info = {}
         title_node = item.find(f'./{namespace}title')
